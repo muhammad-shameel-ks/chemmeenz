@@ -52,9 +52,9 @@ const reviews = [
 ];
 
 const platforms = [
-  { name: "Zomato", rating: "4.0", reviews: "9,000+", icon: "star" },
-  { name: "Restaurant Guru", rating: "4.0", reviews: "11,000+", icon: "star" },
-  { name: "Google", rating: "3.8", reviews: "500+", icon: "star" },
+  { name: "Zomato", rating: "4.0", reviews: "9,000+", logo: "/images/zomato.png" },
+  { name: "Restaurant Guru", rating: "4.0", reviews: "11,000+", logo: null },
+  { name: "Google", rating: "3.8", reviews: "500+", logo: "/images/google-maps.png" },
 ];
 ---
 
@@ -78,7 +78,15 @@ const platforms = [
     <div class="platforms-bar">
       {platforms.map(p => (
         <div class="platform-card" id={`platform-${p.name.toLowerCase().replace(/\s+/g, '-')}`}>
-          <span class="platform-emoji"><Icon name={p.icon} /></span>
+          <span class="platform-logo-wrap">
+            {p.logo ? (
+              <img src={p.logo} alt={`${p.name} Logo`} class="platform-logo-img" />
+            ) : (
+              <span class="platform-fallback-logo">
+                <Icon name="trophy" class="trophy-icon" />
+              </span>
+            )}
+          </span>
           <div class="platform-info">
             <span class="platform-name">{p.name}</span>
             <div class="platform-rating-row">
@@ -228,8 +236,43 @@ const platforms = [
     box-shadow: var(--shadow-glow-gold);
   }
 
-  .platform-emoji {
-    font-size: 1.6rem;
+  .platform-logo-wrap {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-glass-light);
+    border: 1px solid var(--color-border);
+    flex-shrink: 0;
+    overflow: hidden;
+    padding: 6px;
+    transition: all var(--transition-smooth);
+  }
+
+  .platform-card:hover .platform-logo-wrap {
+    border-color: var(--color-border-gold);
+    background: rgba(255, 78, 0, 0.05);
+  }
+
+  .platform-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .platform-fallback-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    font-size: 1.25rem;
+    transition: all var(--transition-smooth);
+  }
+
+  .platform-card:hover .platform-fallback-logo {
+    transform: scale(1.1);
   }
 
   .platform-info {
