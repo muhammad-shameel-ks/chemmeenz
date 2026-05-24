@@ -1,11 +1,21 @@
 ---
+import Icon from './Icon.astro';
 const dishes = [
   {
-    name: "Fried Prawns",
-    desc: "Golden crispy prawns marinated in Kerala spices, deep-fried to perfection. Our signature dish loved by thousands.",
+    name: "Chemmeen Roast",
+    desc: "Plump prawns cooked to a rich, semi-dry consistency in a fragrant blend of traditional Kerala spices, onions, coconut slices, and curry leaves.",
     price: "₹380",
-    emoji: "🦐",
+    icon: "shrimp",
     tag: "Signature",
+    tagColor: "gold",
+    category: "seafood"
+  },
+  {
+    name: "Grilled Tilapia",
+    desc: "Whole tilapia marinated in signature coastal spices, coal-grilled to tender perfection, served with warm kubboos and garlic dip.",
+    price: "₹360",
+    icon: "fish",
+    tag: "Coal-Grilled",
     tagColor: "gold",
     category: "seafood"
   },
@@ -13,7 +23,7 @@ const dishes = [
     name: "Roast Beef",
     desc: "Tender beef slow-roasted with a blend of traditional Kerala masala, coconut, and curry leaves.",
     price: "₹320",
-    emoji: "🥩",
+    icon: "beef",
     tag: "Popular",
     tagColor: "accent",
     category: "meat"
@@ -22,37 +32,37 @@ const dishes = [
     name: "Fish Curry",
     desc: "Fresh catch simmered in tangy kokum-tamarind gravy with raw mango and coastal spices.",
     price: "₹290",
-    emoji: "🐟",
+    icon: "fish",
     tag: "Must Try",
     tagColor: "teal",
     category: "seafood"
   },
   {
-    name: "Fried Chicken",
-    desc: "Crispy Kerala-style fried chicken with a fiery chili-pepper coating and a side of lime.",
-    price: "₹260",
-    emoji: "🍗",
+    name: "Chatti Choru",
+    desc: "A hearty combination of parboiled rice, spicy fish fry, traditional curries, chammanthi, and pappadam served hot in a clay pot.",
+    price: "₹390",
+    icon: "rice",
     tag: "Bestseller",
     tagColor: "gold",
-    category: "meat"
+    category: "rice"
   },
   {
-    name: "Ghee Rice & Biryani",
-    desc: "Fragrant basmati rice layered with aromatic spices, saffron, and slow-cooked proteins.",
+    name: "Malabar Dum Biryani",
+    desc: "Fragrant Kaima rice layered with perfectly spiced chicken, cooked on slow dum, garnished with fried onions, cashews, and boiled egg.",
     price: "₹340",
-    emoji: "🍚",
+    icon: "rice",
     tag: "Classic",
     tagColor: "accent",
     category: "rice"
   },
   {
-    name: "Fish Fry Masala",
-    desc: "Whole fish marinated in a fiery red chili paste, pan-seared on a traditional tawa griddle.",
-    price: "₹350",
-    emoji: "🐠",
-    tag: "Chef's Pick",
+    name: "Mohabath Sulaimani",
+    desc: "Aromatic Kerala black tea brewed with fresh mint leaves, lemon juice, crushed cardamom, and cloves. Made with pure love.",
+    price: "₹60",
+    icon: "pepper",
+    tag: "Aromatic",
     tagColor: "teal",
-    category: "seafood"
+    category: "drinks"
   }
 ];
 ---
@@ -79,7 +89,7 @@ const dishes = [
           <div class="dish-card-inner">
             <div class="dish-header">
               <div class="dish-emoji-wrap">
-                <span class="dish-emoji">{dish.emoji}</span>
+                <span class="dish-emoji"><Icon name={dish.icon} /></span>
                 <div class="dish-emoji-glow"></div>
               </div>
               <span class={`dish-tag tag-${dish.tagColor}`}>{dish.tag}</span>
@@ -108,7 +118,7 @@ const dishes = [
         Want to see our full menu? Contact us or visit to explore all our dishes.
       </p>
       <a href="tel:+918137911122" class="btn-menu-cta" id="menu-call-btn">
-        <span>📞</span>
+        <span><Icon name="phone" /></span>
         <span>Call for Full Menu</span>
       </a>
     </div>

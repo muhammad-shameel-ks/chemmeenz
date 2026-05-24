@@ -1,17 +1,20 @@
 ---
+import Icon from './Icon.astro';
 ---
 
 <section class="about" id="about">
   <div class="about-container">
     <div class="about-visual">
       <div class="visual-card">
+        <img src="/images/ayela.jpg" alt="Authentic Kerala Fish Fry" class="visual-img" />
+        <div class="visual-card-overlay"></div>
         <div class="card-pattern"></div>
         <div class="card-content">
-          <span class="card-emoji">🦐</span>
+          <span class="card-emoji"><Icon name="fish" /></span>
           <div class="card-text">
-            <span class="card-year">Since</span>
-            <span class="card-number">Kerala</span>
-            <span class="card-sub">Palakkad's Finest</span>
+            <span class="card-year">ESTD. 2020</span>
+            <span class="card-number">CHEMMEENZ</span>
+            <span class="card-sub">Palakkad's Finest Seafood</span>
           </div>
         </div>
         <div class="card-glow"></div>
@@ -19,19 +22,19 @@
 
       <div class="visual-features">
         <div class="feature-pill">
-          <span class="pill-icon">🐟</span>
+          <span class="pill-icon"><Icon name="fish" /></span>
           <span class="pill-text">Fresh Catch Daily</span>
         </div>
         <div class="feature-pill">
-          <span class="pill-icon">🌿</span>
+          <span class="pill-icon"><Icon name="herb" /></span>
           <span class="pill-text">Traditional Spices</span>
         </div>
         <div class="feature-pill">
-          <span class="pill-icon">👨‍🍳</span>
+          <span class="pill-icon"><Icon name="chef" /></span>
           <span class="pill-text">Expert Chefs</span>
         </div>
         <div class="feature-pill">
-          <span class="pill-icon">🚚</span>
+          <span class="pill-icon"><Icon name="truck" /></span>
           <span class="pill-text">Home Delivery</span>
         </div>
       </div>
@@ -63,7 +66,7 @@
       <div class="about-highlights">
         <div class="highlight-item">
           <div class="highlight-icon-wrap">
-            <span class="highlight-icon">🕐</span>
+            <span class="highlight-icon"><Icon name="clock" /></span>
           </div>
           <div class="highlight-info">
             <span class="highlight-label">Open Daily</span>
@@ -72,7 +75,7 @@
         </div>
         <div class="highlight-item">
           <div class="highlight-icon-wrap">
-            <span class="highlight-icon">💰</span>
+            <span class="highlight-icon"><Icon name="dollar" /></span>
           </div>
           <div class="highlight-info">
             <span class="highlight-label">Price Range</span>
@@ -81,7 +84,7 @@
         </div>
         <div class="highlight-item">
           <div class="highlight-icon-wrap">
-            <span class="highlight-icon">🍽️</span>
+            <span class="highlight-icon"><Icon name="plate" /></span>
           </div>
           <div class="highlight-info">
             <span class="highlight-label">Cuisine</span>
@@ -139,6 +142,29 @@
     justify-content: center;
   }
 
+  .visual-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    z-index: 0;
+  }
+
+  .visual-card:hover .visual-img {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+
+  .visual-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.4) 100%);
+    z-index: 1;
+  }
+
   .card-pattern {
     position: absolute;
     inset: 0;
@@ -151,7 +177,7 @@
 
   .card-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     display: flex;
     flex-direction: column;
