@@ -1,0 +1,442 @@
+---
+const reviews = [
+  {
+    name: "Arun Menon",
+    platform: "Zomato",
+    rating: 5,
+    text: "The fried prawns here are absolutely divine! Perfectly crispy outside, succulent inside. Best seafood in Palakkad without a doubt. The staff is incredibly warm and welcoming.",
+    date: "2 weeks ago",
+    avatar: "AM"
+  },
+  {
+    name: "Priya Nair",
+    platform: "Google",
+    rating: 5,
+    text: "We visit Chemmeenz every weekend for their roast beef — it's unmatched! The quiet atmosphere makes it perfect for family dinners. Highly recommended for anyone visiting Palakkad.",
+    date: "1 month ago",
+    avatar: "PN"
+  },
+  {
+    name: "Rajesh Kumar",
+    platform: "Restaurant Guru",
+    rating: 4,
+    text: "Amazing fish curry! The flavors are authentic Kerala — tangy, spicy, and rich. The prices are very reasonable for the quality and portions you get. Will definitely come back.",
+    date: "3 weeks ago",
+    avatar: "RK"
+  },
+  {
+    name: "Sneha Thomas",
+    platform: "Zomato",
+    rating: 5,
+    text: "The fried chicken is so addictive! Crispy Kerala-style coating with the perfect level of spice. Love the delivery option — food arrives hot and fresh every time. Top-notch restaurant!",
+    date: "1 week ago",
+    avatar: "ST"
+  },
+  {
+    name: "Mohammed Faisal",
+    platform: "Google",
+    rating: 5,
+    text: "Been a regular for over 3 years. Chemmeenz never disappoints. Their fish fry masala is a masterpiece. The ambiance has improved a lot recently. Great value for money.",
+    date: "2 months ago",
+    avatar: "MF"
+  },
+  {
+    name: "Lakshmi Devi",
+    platform: "Restaurant Guru",
+    rating: 4,
+    text: "Lovely place for non-veg food lovers. The biryani is fragrant and filling. Staff is polite and service is quick. A hidden gem in Palakkad that deserves more recognition.",
+    date: "1 month ago",
+    avatar: "LD"
+  }
+];
+
+const platforms = [
+  { name: "Zomato", rating: "4.0", reviews: "9,000+", emoji: "🟥" },
+  { name: "Restaurant Guru", rating: "4.0", reviews: "11,000+", emoji: "🟩" },
+  { name: "Google", rating: "3.8", reviews: "500+", emoji: "🟦" },
+];
+---
+
+<section class="reviews" id="reviews">
+  <div class="reviews-container">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">What People Say</span>
+        <span class="label-line"></span>
+      </div>
+      <h2 class="section-title">
+        Loved by <span class="text-gold">Thousands</span>
+      </h2>
+      <p class="section-desc">
+        Over 20,000 reviews across platforms — hear what our guests have to say.
+      </p>
+    </div>
+
+    <!-- Platform Ratings -->
+    <div class="platforms-bar">
+      {platforms.map(p => (
+        <div class="platform-card" id={`platform-${p.name.toLowerCase().replace(/\s+/g, '-')}`}>
+          <span class="platform-emoji">{p.emoji}</span>
+          <div class="platform-info">
+            <span class="platform-name">{p.name}</span>
+            <div class="platform-rating-row">
+              <span class="platform-stars">{"★".repeat(Math.floor(parseFloat(p.rating)))}{"☆".repeat(5 - Math.floor(parseFloat(p.rating)))}</span>
+              <span class="platform-score">{p.rating}</span>
+            </div>
+            <span class="platform-count">{p.reviews} reviews</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Reviews Carousel -->
+    <div class="reviews-scroll-wrapper">
+      <div class="reviews-track" id="reviews-track">
+        {reviews.map((review, i) => (
+          <article class="review-card" id={`review-card-${i}`}>
+            <div class="review-top">
+              <div class="review-stars">
+                {"★".repeat(review.rating)}{"☆".repeat(5 - review.rating)}
+              </div>
+              <span class="review-platform">{review.platform}</span>
+            </div>
+
+            <blockquote class="review-text">
+              "{review.text}"
+            </blockquote>
+
+            <div class="review-author">
+              <div class="author-avatar">
+                <span>{review.avatar}</span>
+              </div>
+              <div class="author-info">
+                <span class="author-name">{review.name}</span>
+                <span class="author-date">{review.date}</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Scroll controls -->
+    <div class="scroll-controls">
+      <button class="scroll-btn scroll-left" id="reviews-scroll-left" aria-label="Scroll reviews left">←</button>
+      <div class="scroll-dots" id="scroll-dots"></div>
+      <button class="scroll-btn scroll-right" id="reviews-scroll-right" aria-label="Scroll reviews right">→</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    padding: var(--section-padding) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reviews::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-gold), transparent);
+  }
+
+  .reviews-container {
+    width: var(--container-width);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .label-line {
+    width: 32px;
+    height: 2px;
+    background: var(--color-gold);
+    border-radius: 1px;
+  }
+
+  .label-text {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .text-gold {
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-desc {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Platforms */
+  .platforms-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .platform-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-smooth);
+  }
+
+  .platform-card:hover {
+    border-color: var(--color-border-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  .platform-emoji {
+    font-size: 1.6rem;
+  }
+
+  .platform-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .platform-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .platform-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .platform-stars {
+    color: var(--color-gold);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .platform-score {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-gold);
+  }
+
+  .platform-count {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Reviews Track */
+  .reviews-scroll-wrapper {
+    overflow: hidden;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+
+  .reviews-track {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0 1.5rem;
+  }
+
+  .reviews-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .review-card {
+    flex: 0 0 min(360px, 85vw);
+    scroll-snap-align: start;
+    padding: 1.75rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: all var(--transition-smooth);
+  }
+
+  .review-card:hover {
+    border-color: var(--color-border-gold);
+    background: var(--color-bg-card-hover);
+  }
+
+  .review-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .review-stars {
+    color: var(--color-gold);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  .review-platform {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.6rem;
+    background: var(--color-bg-glass-light);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+  }
+
+  .review-text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-bg-deep);
+    flex-shrink: 0;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .author-date {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Scroll Controls */
+  .scroll-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .scroll-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    transition: all var(--transition-smooth);
+  }
+
+  .scroll-btn:hover {
+    background: var(--color-gold-glow);
+    border-color: var(--color-border-gold);
+    color: var(--color-gold);
+  }
+
+  .scroll-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .platforms-bar {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .review-card {
+      flex: 0 0 min(320px, 85vw);
+      padding: 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  const track = document.getElementById('reviews-track');
+  const leftBtn = document.getElementById('reviews-scroll-left');
+  const rightBtn = document.getElementById('reviews-scroll-right');
+
+  const scrollAmount = 380;
+
+  leftBtn?.addEventListener('click', () => {
+    track?.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  rightBtn?.addEventListener('click', () => {
+    track?.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  // Touch swipe support is built-in via CSS scroll-snap
+</script>

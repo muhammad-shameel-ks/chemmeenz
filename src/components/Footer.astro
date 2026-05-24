@@ -1,0 +1,300 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer" id="footer">
+  <div class="footer-container">
+    <!-- Top Section -->
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-icon">🦐</span>
+          <div class="footer-logo-text">
+            <span class="footer-name">Chemmeenz</span>
+            <span class="footer-tagline">Seafood & Kerala Cuisine</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Authentic Kerala seafood and non-vegetarian delicacies in the heart 
+          of Palakkad. Experience the taste of tradition since day one.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 class="footer-heading">Quick Links</h4>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#about" class="footer-link" id="footer-about">About Us</a>
+          <a href="#specialties" class="footer-link" id="footer-menu">Our Menu</a>
+          <a href="#reviews" class="footer-link" id="footer-reviews">Reviews</a>
+          <a href="#gallery" class="footer-link" id="footer-gallery">Gallery</a>
+          <a href="#contact" class="footer-link" id="footer-contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 class="footer-heading">Contact</h4>
+        <div class="footer-contact-list">
+          <a href="tel:+918137911122" class="footer-contact-item" id="footer-phone">
+            <span>📞</span>
+            <span>+91 81379 11122</span>
+          </a>
+          <div class="footer-contact-item">
+            <span>🕐</span>
+            <span>11:30 AM – 11:00 PM</span>
+          </div>
+          <a href="https://maps.google.com/?q=Chemmeenz+Restaurant+Palakkad" target="_blank" rel="noopener noreferrer" class="footer-contact-item" id="footer-address">
+            <span>📍</span>
+            <span>West Yakkara, Palakkad, Kerala</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © {currentYear} Chemmeenz Restaurant. All rights reserved.
+      </p>
+      <div class="footer-platforms">
+        <a href="https://www.zomato.com/palakkad/chemmeenz" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-zomato">
+          <span>🟥</span> Zomato
+        </a>
+        <a href="https://www.google.com/maps/place/Chemmeenz+Restaurant" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-google">
+          <span>🟦</span> Google
+        </a>
+        <a href="https://restaurantguru.com/Chemmeenz-Palakkad" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-guru">
+          <span>🟩</span> Restaurant Guru
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background decoration -->
+  <div class="footer-bg-deco">
+    <div class="footer-glow"></div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    padding: 4rem 0 0;
+    background: linear-gradient(180deg, var(--color-bg-deep) 0%, #060610 100%);
+    overflow: hidden;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-gold), transparent);
+  }
+
+  .footer-container {
+    width: var(--container-width);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Top */
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-logo-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 8px rgba(212, 168, 83, 0.3));
+  }
+
+  .footer-logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-gold);
+  }
+
+  .footer-tagline {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    max-width: 320px;
+  }
+
+  .footer-heading {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+    padding: 0.2rem 0;
+  }
+
+  .footer-link:hover {
+    color: var(--color-gold-light);
+    transform: translateX(4px);
+  }
+
+  .footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+  }
+
+  a.footer-contact-item:hover {
+    color: var(--color-gold-light);
+  }
+
+  /* Divider */
+  .footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-copyright {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .footer-platforms {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .platform-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    padding: 0.35rem 0.75rem;
+    background: var(--color-bg-glass-light);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: all var(--transition-fast);
+  }
+
+  .platform-badge:hover {
+    border-color: var(--color-border-gold);
+    color: var(--color-text-secondary);
+  }
+
+  /* Background decoration */
+  .footer-bg-deco {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    pointer-events: none;
+  }
+
+  .footer-glow {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 200px;
+    background: radial-gradient(ellipse, rgba(212, 168, 83, 0.04), transparent 70%);
+  }
+
+  @media (max-width: 900px) {
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+      grid-column: span 1;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-platforms {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>

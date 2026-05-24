@@ -1,0 +1,498 @@
+---
+---
+
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">Visit Us</span>
+        <span class="label-line"></span>
+      </div>
+      <h2 class="section-title">
+        Find <span class="text-gold">Chemmeenz</span>
+      </h2>
+      <p class="section-desc">
+        We're located in the heart of West Yakkara, Palakkad. Drop by for an unforgettable dining experience.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Info Cards -->
+      <div class="contact-info">
+        <a href="tel:+918137911122" class="info-card" id="contact-phone-card">
+          <div class="info-icon-wrap">
+            <span class="info-icon">📞</span>
+          </div>
+          <div class="info-details">
+            <span class="info-label">Call Us</span>
+            <span class="info-value">+91 81379 11122</span>
+            <span class="info-action">Tap to call →</span>
+          </div>
+        </a>
+
+        <div class="info-card" id="contact-hours-card">
+          <div class="info-icon-wrap">
+            <span class="info-icon">🕐</span>
+          </div>
+          <div class="info-details">
+            <span class="info-label">Operating Hours</span>
+            <span class="info-value">11:30 AM – 11:00 PM</span>
+            <span class="info-sub">Open all 7 days</span>
+          </div>
+          <div class="open-badge" id="open-status">
+            <span class="open-dot"></span>
+            <span class="open-text">Open Now</span>
+          </div>
+        </div>
+
+        <a
+          href="https://maps.google.com/?q=Chemmeenz+Restaurant+Palakkad"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="info-card"
+          id="contact-address-card"
+        >
+          <div class="info-icon-wrap">
+            <span class="info-icon">📍</span>
+          </div>
+          <div class="info-details">
+            <span class="info-label">Address</span>
+            <span class="info-value">West Yakkara, Palakkad</span>
+            <span class="info-sub">Mosque, Murikkavu, Yakkara Rd,<br/>Tippusulthan Nagar, AKG Nagar,<br/>Kerala 678001</span>
+            <span class="info-action">Get directions →</span>
+          </div>
+        </a>
+
+        <div class="info-card" id="contact-price-card">
+          <div class="info-icon-wrap">
+            <span class="info-icon">💰</span>
+          </div>
+          <div class="info-details">
+            <span class="info-label">Price Range</span>
+            <span class="info-value">₹870 – ₹2,200</span>
+            <span class="info-sub">Per person • Moderate ($$)</span>
+          </div>
+        </div>
+
+        <div class="info-card delivery-card" id="contact-delivery-card">
+          <div class="info-icon-wrap delivery-icon">
+            <span class="info-icon">🚚</span>
+          </div>
+          <div class="info-details">
+            <span class="info-label">Home Delivery</span>
+            <span class="info-value">We Deliver!</span>
+            <span class="info-sub">Order via call or Zomato</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="contact-map-wrap">
+        <div class="map-card">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.123!2d76.6506!3d10.7725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86e0c01000001%3A0x7f1234567890!2sChemmeenz+Restaurant!5e0!3m2!1sen!2sin!4v1700000000000"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Chemmeenz Restaurant Location"
+          ></iframe>
+          <div class="map-overlay">
+            <a
+              href="https://maps.google.com/?q=Chemmeenz+Restaurant+Palakkad+Kerala"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="map-link"
+              id="map-open-link"
+            >
+              Open in Google Maps →
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div class="social-links">
+          <a
+            href="https://www.zomato.com/palakkad/chemmeenz"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            id="social-zomato"
+          >
+            <span class="social-emoji">🟥</span>
+            <span>Zomato</span>
+          </a>
+          <a
+            href="https://www.google.com/maps/place/Chemmeenz+Restaurant"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            id="social-google"
+          >
+            <span class="social-emoji">🟦</span>
+            <span>Google</span>
+          </a>
+          <a
+            href="https://restaurantguru.com/Chemmeenz-Palakkad"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            id="social-guru"
+          >
+            <span class="social-emoji">🟩</span>
+            <span>Restaurant Guru</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: var(--section-padding) 0;
+    position: relative;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-gold), transparent);
+  }
+
+  .contact-container {
+    width: var(--container-width);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .label-line {
+    width: 32px;
+    height: 2px;
+    background: var(--color-gold);
+    border-radius: 1px;
+  }
+
+  .label-text {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .text-gold {
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-desc {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* Info Cards */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-smooth);
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .info-card:hover {
+    border-color: var(--color-border-gold);
+    background: var(--color-bg-card-hover);
+    transform: translateX(4px);
+  }
+
+  .info-icon-wrap {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-glass-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  .info-icon {
+    font-size: 1.2rem;
+  }
+
+  .info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    flex: 1;
+  }
+
+  .info-label {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .info-value {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .info-sub {
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .info-action {
+    font-size: 0.78rem;
+    color: var(--color-gold);
+    font-weight: 500;
+    margin-top: 0.25rem;
+    transition: color var(--transition-fast);
+  }
+
+  .info-card:hover .info-action {
+    color: var(--color-gold-light);
+  }
+
+  /* Open Badge */
+  .open-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(45, 212, 168, 0.1);
+    border: 1px solid rgba(45, 212, 168, 0.2);
+    border-radius: 4px;
+  }
+
+  .open-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-teal);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(45, 212, 168, 0.4); }
+    50% { opacity: 0.8; box-shadow: 0 0 0 4px rgba(45, 212, 168, 0); }
+  }
+
+  .open-text {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .delivery-card {
+    border-color: rgba(232, 93, 58, 0.15);
+  }
+
+  .delivery-icon {
+    border-color: rgba(232, 93, 58, 0.2);
+    background: rgba(232, 93, 58, 0.05);
+  }
+
+  /* Map */
+  .contact-map-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .map-card {
+    position: relative;
+    height: 380px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+  }
+
+  .map-card iframe {
+    width: 100%;
+    height: 100%;
+    filter: saturate(0.8) brightness(0.7) contrast(1.1);
+    transition: filter var(--transition-smooth);
+  }
+
+  .map-card:hover iframe {
+    filter: saturate(1) brightness(0.8) contrast(1);
+  }
+
+  .map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    justify-content: center;
+  }
+
+  .map-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-gold-light);
+    padding: 0.5rem 1.2rem;
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border-gold);
+    border-radius: 4px;
+    transition: all var(--transition-smooth);
+  }
+
+  .map-link:hover {
+    background: var(--color-gold-glow);
+    transform: translateY(-2px);
+  }
+
+  /* Social Links */
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-smooth);
+  }
+
+  .social-link:hover {
+    border-color: var(--color-border-gold);
+    background: var(--color-bg-card-hover);
+    transform: translateY(-2px);
+    color: var(--color-text-primary);
+  }
+
+  .social-emoji {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .map-card {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .social-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Check if currently open
+  function checkOpen() {
+    const badge = document.getElementById('open-status');
+    if (!badge) return;
+
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const timeInMinutes = hours * 60 + minutes;
+
+    // Open: 11:30 (690) to 23:00 (1380)
+    const isOpen = timeInMinutes >= 690 && timeInMinutes <= 1380;
+
+    const dot = badge.querySelector('.open-dot') as HTMLElement;
+    const text = badge.querySelector('.open-text') as HTMLElement;
+
+    if (!isOpen) {
+      if (dot) {
+        dot.style.background = '#e85d3a';
+        dot.style.animation = 'none';
+      }
+      if (text) {
+        text.textContent = 'Closed';
+        text.style.color = '#e85d3a';
+      }
+      badge.style.background = 'rgba(232, 93, 58, 0.1)';
+      badge.style.borderColor = 'rgba(232, 93, 58, 0.2)';
+    }
+  }
+
+  checkOpen();
+</script>

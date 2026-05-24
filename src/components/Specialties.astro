@@ -1,0 +1,426 @@
+---
+const dishes = [
+  {
+    name: "Fried Prawns",
+    desc: "Golden crispy prawns marinated in Kerala spices, deep-fried to perfection. Our signature dish loved by thousands.",
+    price: "₹380",
+    emoji: "🦐",
+    tag: "Signature",
+    tagColor: "gold",
+    category: "seafood"
+  },
+  {
+    name: "Roast Beef",
+    desc: "Tender beef slow-roasted with a blend of traditional Kerala masala, coconut, and curry leaves.",
+    price: "₹320",
+    emoji: "🥩",
+    tag: "Popular",
+    tagColor: "accent",
+    category: "meat"
+  },
+  {
+    name: "Fish Curry",
+    desc: "Fresh catch simmered in tangy kokum-tamarind gravy with raw mango and coastal spices.",
+    price: "₹290",
+    emoji: "🐟",
+    tag: "Must Try",
+    tagColor: "teal",
+    category: "seafood"
+  },
+  {
+    name: "Fried Chicken",
+    desc: "Crispy Kerala-style fried chicken with a fiery chili-pepper coating and a side of lime.",
+    price: "₹260",
+    emoji: "🍗",
+    tag: "Bestseller",
+    tagColor: "gold",
+    category: "meat"
+  },
+  {
+    name: "Ghee Rice & Biryani",
+    desc: "Fragrant basmati rice layered with aromatic spices, saffron, and slow-cooked proteins.",
+    price: "₹340",
+    emoji: "🍚",
+    tag: "Classic",
+    tagColor: "accent",
+    category: "rice"
+  },
+  {
+    name: "Fish Fry Masala",
+    desc: "Whole fish marinated in a fiery red chili paste, pan-seared on a traditional tawa griddle.",
+    price: "₹350",
+    emoji: "🐠",
+    tag: "Chef's Pick",
+    tagColor: "teal",
+    category: "seafood"
+  }
+];
+---
+
+<section class="specialties" id="specialties">
+  <div class="specialties-container">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">Our Menu</span>
+        <span class="label-line"></span>
+      </div>
+      <h2 class="section-title">
+        Signature <span class="text-gold">Specialties</span>
+      </h2>
+      <p class="section-desc">
+        Every dish tells a story of Kerala's rich culinary heritage — fresh from the coast to your plate.
+      </p>
+    </div>
+
+    <div class="dishes-grid">
+      {dishes.map((dish, i) => (
+        <article class="dish-card" data-index={i} id={`dish-${dish.name.toLowerCase().replace(/\s+/g, '-')}`}>
+          <div class="dish-card-inner">
+            <div class="dish-header">
+              <div class="dish-emoji-wrap">
+                <span class="dish-emoji">{dish.emoji}</span>
+                <div class="dish-emoji-glow"></div>
+              </div>
+              <span class={`dish-tag tag-${dish.tagColor}`}>{dish.tag}</span>
+            </div>
+
+            <div class="dish-body">
+              <h3 class="dish-name">{dish.name}</h3>
+              <p class="dish-desc">{dish.desc}</p>
+            </div>
+
+            <div class="dish-footer">
+              <span class="dish-price">{dish.price}</span>
+              <span class="dish-order">
+                <span class="order-icon">→</span>
+              </span>
+            </div>
+
+            <div class="dish-shine"></div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="menu-cta">
+      <p class="menu-cta-text">
+        Want to see our full menu? Contact us or visit to explore all our dishes.
+      </p>
+      <a href="tel:+918137911122" class="btn-menu-cta" id="menu-call-btn">
+        <span>📞</span>
+        <span>Call for Full Menu</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .specialties {
+    padding: var(--section-padding) 0;
+    position: relative;
+    background: linear-gradient(180deg, var(--color-bg-deep) 0%, #0c0d16 50%, var(--color-bg-deep) 100%);
+  }
+
+  .specialties::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-gold), transparent);
+  }
+
+  .specialties-container {
+    width: var(--container-width);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .label-line {
+    width: 32px;
+    height: 2px;
+    background: var(--color-gold);
+    border-radius: 1px;
+  }
+
+  .label-text {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .text-gold {
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-desc {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Dishes Grid */
+  .dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .dish-card {
+    perspective: 800px;
+  }
+
+  .dish-card-inner {
+    position: relative;
+    padding: 1.75rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: all var(--transition-smooth);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dish-card-inner:hover {
+    border-color: var(--color-border-gold);
+    background: var(--color-bg-card-hover);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  .dish-shine {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(212, 168, 83, 0.03),
+      transparent
+    );
+    transform: rotate(25deg);
+    transition: all 0.7s ease;
+    pointer-events: none;
+  }
+
+  .dish-card-inner:hover .dish-shine {
+    left: 150%;
+  }
+
+  /* Card Header */
+  .dish-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  .dish-emoji-wrap {
+    position: relative;
+  }
+
+  .dish-emoji {
+    font-size: 2.5rem;
+    display: block;
+    transition: transform var(--transition-spring);
+  }
+
+  .dish-card-inner:hover .dish-emoji {
+    transform: scale(1.15) rotate(-5deg);
+  }
+
+  .dish-emoji-glow {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 8px;
+    background: radial-gradient(ellipse, rgba(212, 168, 83, 0.3), transparent);
+    border-radius: 50%;
+    transition: opacity var(--transition-smooth);
+    opacity: 0;
+  }
+
+  .dish-card-inner:hover .dish-emoji-glow {
+    opacity: 1;
+  }
+
+  .dish-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+  }
+
+  .tag-gold {
+    background: var(--color-gold-glow);
+    color: var(--color-gold-light);
+    border: 1px solid rgba(212, 168, 83, 0.2);
+  }
+
+  .tag-accent {
+    background: var(--color-accent-glow);
+    color: var(--color-accent-light);
+    border: 1px solid rgba(232, 93, 58, 0.2);
+  }
+
+  .tag-teal {
+    background: var(--color-teal-glow);
+    color: var(--color-teal);
+    border: 1px solid rgba(45, 212, 168, 0.2);
+  }
+
+  /* Card Body */
+  .dish-body {
+    flex: 1;
+  }
+
+  .dish-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-primary);
+  }
+
+  .dish-desc {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  /* Card Footer */
+  .dish-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .dish-price {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-gold);
+  }
+
+  .dish-order {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-glass-light);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    transition: all var(--transition-smooth);
+  }
+
+  .order-icon {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    transition: all var(--transition-smooth);
+  }
+
+  .dish-card-inner:hover .dish-order {
+    background: var(--color-gold-glow);
+    border-color: var(--color-border-gold);
+  }
+
+  .dish-card-inner:hover .order-icon {
+    color: var(--color-gold);
+    transform: translateX(2px);
+  }
+
+  /* Menu CTA */
+  .menu-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .menu-cta-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-menu-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-gold);
+    color: var(--color-gold-light);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all var(--transition-smooth);
+  }
+
+  .btn-menu-cta:hover {
+    background: var(--color-gold-glow);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  @media (max-width: 900px) {
+    .dishes-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .dishes-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .dish-card-inner {
+      padding: 1.25rem;
+    }
+  }
+</style>

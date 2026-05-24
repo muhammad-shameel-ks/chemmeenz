@@ -1,0 +1,372 @@
+---
+---
+
+<section class="about" id="about">
+  <div class="about-container">
+    <div class="about-visual">
+      <div class="visual-card">
+        <div class="card-pattern"></div>
+        <div class="card-content">
+          <span class="card-emoji">🦐</span>
+          <div class="card-text">
+            <span class="card-year">Since</span>
+            <span class="card-number">Kerala</span>
+            <span class="card-sub">Palakkad's Finest</span>
+          </div>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+      <div class="visual-features">
+        <div class="feature-pill">
+          <span class="pill-icon">🐟</span>
+          <span class="pill-text">Fresh Catch Daily</span>
+        </div>
+        <div class="feature-pill">
+          <span class="pill-icon">🌿</span>
+          <span class="pill-text">Traditional Spices</span>
+        </div>
+        <div class="feature-pill">
+          <span class="pill-icon">👨‍🍳</span>
+          <span class="pill-text">Expert Chefs</span>
+        </div>
+        <div class="feature-pill">
+          <span class="pill-icon">🚚</span>
+          <span class="pill-text">Home Delivery</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">Our Story</span>
+      </div>
+
+      <h2 class="about-title">
+        A Legacy of <span class="text-gold">Kerala's Finest</span> Seafood
+      </h2>
+
+      <p class="about-description">
+        Nestled in the heart of West Yakkara, Palakkad, <strong>Chemmeenz Restaurant</strong> 
+        brings the rich coastal flavors of Kerala to your table. We specialize in authentic 
+        traditional non-vegetarian varieties and Kerala-style seafood dishes that have earned 
+        us the love of over <strong>20,000 reviewers</strong> across platforms.
+      </p>
+
+      <p class="about-description">
+        From our signature <em>crispy fried prawns</em> to the aromatic <em>roast beef</em> 
+        and delicate <em>fish preparations</em>, every dish is crafted with locally sourced 
+        ingredients and time-honored recipes passed down through generations.
+      </p>
+
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="highlight-icon-wrap">
+            <span class="highlight-icon">🕐</span>
+          </div>
+          <div class="highlight-info">
+            <span class="highlight-label">Open Daily</span>
+            <span class="highlight-value">11:30 AM – 11:00 PM</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon-wrap">
+            <span class="highlight-icon">💰</span>
+          </div>
+          <div class="highlight-info">
+            <span class="highlight-label">Price Range</span>
+            <span class="highlight-value">₹870 – ₹2,200 per person</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon-wrap">
+            <span class="highlight-icon">🍽️</span>
+          </div>
+          <div class="highlight-info">
+            <span class="highlight-label">Cuisine</span>
+            <span class="highlight-value">Kerala Seafood & Non-Veg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: var(--section-padding) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-gold), transparent);
+  }
+
+  .about-container {
+    width: var(--container-width);
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Visual side */
+  .about-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .visual-card {
+    position: relative;
+    aspect-ratio: 4/3;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1520, #1e1828, #1a2025);
+    border: 1px solid var(--color-border-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image:
+      radial-gradient(circle at 30% 30%, var(--color-gold) 1px, transparent 1px),
+      radial-gradient(circle at 70% 70%, var(--color-accent) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card-emoji {
+    font-size: 4rem;
+    filter: drop-shadow(0 0 20px rgba(212, 168, 83, 0.3));
+    animation: cardFloat 4s ease-in-out infinite;
+  }
+
+  @keyframes cardFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+  }
+
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-year {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .card-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-sub {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.1em;
+  }
+
+  .card-glow {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(212, 168, 83, 0.15), transparent 70%);
+    pointer-events: none;
+  }
+
+  .visual-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .feature-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-smooth);
+  }
+
+  .feature-pill:hover {
+    border-color: var(--color-border-gold);
+    background: var(--color-bg-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .pill-icon {
+    font-size: 1.2rem;
+  }
+
+  .pill-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+
+  /* Text side */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .label-line {
+    width: 32px;
+    height: 2px;
+    background: var(--color-gold);
+    border-radius: 1px;
+  }
+
+  .label-text {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
+  .about-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .text-gold {
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .about-description strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .about-description em {
+    color: var(--color-gold-light);
+    font-style: normal;
+  }
+
+  .about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0;
+  }
+
+  .highlight-icon-wrap {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  .highlight-icon {
+    font-size: 1.1rem;
+  }
+
+  .highlight-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .highlight-label {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .highlight-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 900px) {
+    .about-container {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .about-visual {
+      order: -1;
+    }
+
+    .visual-card {
+      aspect-ratio: 16/9;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .visual-features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
