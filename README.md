@@ -1,46 +1,32 @@
-# Astro Starter Kit: Basics
+# Chemmeenz Restaurant
 
-```sh
-bun create astro@latest -- --template basics
-```
+A premium landing page for Chemmeenz Restaurant — an authentic Kerala seafood and non-veg restaurant in Palakkad. Built with Astro.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features
 
-## 🚀 Project Structure
+- Fully responsive hero section with cinematic vignette
+- Image gallery showcasing signature dishes
+- Customer reviews carousel
+- Contact and location info
+- Smooth scroll navigation
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/images/         # Dish and brand images
+├── src/
+│   ├── components/        # Hero, About, Specialties, Gallery, Reviews, etc.
+│   ├── layouts/           # Base Layout.astro
+│   └── pages/             # index.astro (single-page site)
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Commands
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command           | Action                                     |
+| :---------------- | :----------------------------------------- |
+| `bun install`     | Install dependencies                       |
+| `bun dev`         | Start dev server at `localhost:4321`       |
+| `bun build`       | Build production site to `./dist/`         |
+| `bun preview`     | Preview build locally before deploying     |
