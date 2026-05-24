@@ -122,8 +122,9 @@ import Icon from './Icon.astro';
             rel="noopener noreferrer"
             class="social-link"
             id="social-zomato"
+            style="padding-left: 0.8rem;"
           >
-            <span class="social-emoji"><Icon name="star" /></span>
+            <img src="/images/zomato.png" alt="Zomato" class="social-icon-img" />
             <span>Zomato</span>
           </a>
           <a
@@ -132,8 +133,9 @@ import Icon from './Icon.astro';
             rel="noopener noreferrer"
             class="social-link"
             id="social-google"
+            style="padding-left: 0.8rem;"
           >
-            <span class="social-emoji"><Icon name="mapPin" /></span>
+            <img src="/images/google.png" alt="Google" class="social-icon-img" />
             <span>Google</span>
           </a>
           <a
@@ -445,6 +447,13 @@ import Icon from './Icon.astro';
 
   .social-emoji {
     font-size: 1.1rem;
+  }
+
+  .social-icon-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    border-radius: 4px;
   }
 
   @media (max-width: 900px) {

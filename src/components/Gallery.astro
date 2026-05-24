@@ -101,15 +101,8 @@ const galleryItems = [
             <div class="gallery-pattern"></div>
 
             <div class="gallery-content">
-              <span class="gallery-emoji"><Icon name={item.icon} /></span>
               <h3 class="gallery-title">{item.title}</h3>
             </div>
-
-            <div class="gallery-overlay">
-              <span class="overlay-text">View Details</span>
-            </div>
-
-            <div class="gallery-border-glow"></div>
           </div>
         </div>
       ))}
@@ -211,24 +204,12 @@ const galleryItems = [
     aspect-ratio: 16/10;
     border-radius: 4px;
     overflow: hidden;
-    cursor: pointer;
-    transition: all var(--transition-smooth);
-  }
-
-  .gallery-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
   }
 
   .gallery-bg {
     position: absolute;
     inset: 0;
     background: var(--item-gradient);
-    transition: transform var(--transition-smooth);
-  }
-
-  .gallery-card:hover .gallery-bg {
-    transform: scale(1.05);
   }
 
   .gallery-img {
@@ -237,27 +218,21 @@ const galleryItems = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
-    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    opacity: 0.6;
     z-index: 0;
-  }
-
-  .gallery-card:hover .gallery-img {
-    transform: scale(1.08);
-    opacity: 0.75;
   }
 
   .gallery-img-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.3) 100%);
+    background: linear-gradient(to top, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.4) 100%);
     z-index: 1;
   }
 
   .gallery-pattern {
     position: absolute;
     inset: 0;
-    opacity: 0.06;
+    opacity: 0.04;
     background-image:
       radial-gradient(circle at 20% 50%, var(--item-accent) 1px, transparent 1px),
       radial-gradient(circle at 80% 50%, var(--item-accent) 0.5px, transparent 0.5px);
@@ -271,75 +246,18 @@ const galleryItems = [
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
     z-index: 2;
-  }
-
-  .gallery-emoji {
-    font-size: 3.5rem;
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
-    transition: all var(--transition-spring);
-  }
-
-  .gallery-card:hover .gallery-emoji {
-    transform: scale(1.2) rotate(-5deg);
   }
 
   .gallery-title {
     font-family: var(--font-display);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--color-text-primary);
     text-align: center;
-    opacity: 0.8;
-    transition: opacity var(--transition-smooth);
-  }
-
-  .gallery-card:hover .gallery-title {
-    opacity: 1;
-  }
-
-  .gallery-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-    z-index: 2;
-  }
-
-  .gallery-card:hover .gallery-overlay {
-    opacity: 1;
-  }
-
-  .overlay-text {
-    padding: 0.5rem 1.5rem;
-    border: 1px solid var(--item-accent);
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--item-accent);
     letter-spacing: 0.05em;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  }
-
-  .gallery-border-glow {
-    position: absolute;
-    inset: 0;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    transition: border-color var(--transition-smooth);
-    pointer-events: none;
-    z-index: 3;
-  }
-
-  .gallery-card:hover .gallery-border-glow {
-    border-color: var(--item-accent);
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   }
 
   @media (max-width: 900px) {

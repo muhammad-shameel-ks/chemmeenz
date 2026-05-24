@@ -83,37 +83,7 @@ const dishes = [
       </p>
     </div>
 
-    <div class="dishes-grid">
-      {dishes.map((dish, i) => (
-        <article class="dish-card" data-index={i} id={`dish-${dish.name.toLowerCase().replace(/\s+/g, '-')}`}>
-          <div class="dish-card-inner">
-            <div class="dish-header">
-              <div class="dish-emoji-wrap">
-                <span class="dish-emoji"><Icon name={dish.icon} /></span>
-                <div class="dish-emoji-glow"></div>
-              </div>
-              <span class={`dish-tag tag-${dish.tagColor}`}>{dish.tag}</span>
-            </div>
-
-            <div class="dish-body">
-              <h3 class="dish-name">{dish.name}</h3>
-              <p class="dish-desc">{dish.desc}</p>
-            </div>
-
-            <div class="dish-footer">
-              <span class="dish-price">{dish.price}</span>
-              <span class="dish-order">
-                <span class="order-icon">→</span>
-              </span>
-            </div>
-
-            <div class="dish-shine"></div>
-          </div>
-        </article>
-      ))}
-    </div>
-
-    <div class="menu-cta">
+    <div class="menu-cta" style="margin-top: 0; padding-top: 0; border-top: none;">
       <p class="menu-cta-text">
         Want to see our full menu? Contact us or visit to explore all our dishes.
       </p>

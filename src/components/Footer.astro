@@ -60,11 +60,11 @@ const currentYear = new Date().getFullYear();
         © {currentYear} Chemmeenz Restaurant. All rights reserved.
       </p>
       <div class="footer-platforms">
-        <a href="https://www.zomato.com/palakkad/chemmeenz" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-zomato">
-          <span><Icon name="star" /></span> Zomato
+        <a href="https://www.zomato.com/palakkad/chemmeenz" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-zomato" style="padding-left: 0.5rem;">
+          <img src="/images/zomato.png" alt="Zomato" class="platform-icon-img" /> Zomato
         </a>
-        <a href="https://www.google.com/maps/place/CHEMMEENZ+RESTAURANT/@10.7725,76.6506,16z/data=!4m6!3m5!1s0x3ba86de2d08858f1:0x8de76b7ed285b70e!8m2!3d10.7570337!4d76.6519452!16s%2Fg%2F11h2qmlv8h?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-google">
-          <span><Icon name="mapPin" /></span> Google
+        <a href="https://www.google.com/maps/place/CHEMMEENZ+RESTAURANT/@10.7725,76.6506,16z/data=!4m6!3m5!1s0x3ba86de2d08858f1:0x8de76b7ed285b70e!8m2!3d10.7570337!4d76.6519452!16s%2Fg%2F11h2qmlv8h?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-google" style="padding-left: 0.5rem;">
+          <img src="/images/google.png" alt="Google" class="platform-icon-img" /> Google
         </a>
         <a href="https://restaurantguru.com/Chemmeenz-Palakkad" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-guru">
           <span><Icon name="trophy" /></span> Restaurant Guru
@@ -243,6 +243,13 @@ const currentYear = new Date().getFullYear();
     border: 1px solid var(--color-border);
     border-radius: 4px;
     transition: all var(--transition-fast);
+  }
+
+  .platform-icon-img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    border-radius: 2px;
   }
 
   .platform-badge:hover {
