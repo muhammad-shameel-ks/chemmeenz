@@ -1,6 +1,6 @@
-# Chemmeenz Restaurant
+# Chemmeenz by Menma
 
-A premium landing page for Chemmeenz Restaurant — an authentic Kerala seafood and non-veg restaurant in Palakkad. Built with Astro.
+A premium landing page for Chemmeenz — an authentic Kerala seafood and non-veg restaurant in Palakkad, managed by **Menma Group**. Built with Astro.
 
 ## Features
 

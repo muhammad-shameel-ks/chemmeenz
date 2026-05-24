@@ -9,15 +9,15 @@ const currentYear = new Date().getFullYear();
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="/images/logo.png" alt="Chemmeenz Logo" class="footer-logo-img" />
+          <img src="/images/logo.png" alt="Chemmeenz by Menma Logo" class="footer-logo-img" />
           <div class="footer-logo-text">
             <span class="footer-name">Chemmeenz</span>
-            <span class="footer-tagline">Seafood & Kerala Cuisine</span>
+            <span class="footer-by">by Menma</span>
           </div>
         </div>
         <p class="footer-desc">
-          Authentic Kerala seafood and non-vegetarian delicacies in the heart 
-          of Palakkad. Experience the taste of tradition since day one.
+          A premium seafood dining venture by <strong>Menma Group</strong>. Experience authentic 
+          Kerala flavours and traditional non-vegetarian delicacies in the heart of Palakkad.
         </p>
       </div>
 
@@ -57,7 +57,7 @@ const currentYear = new Date().getFullYear();
     <!-- Bottom -->
     <div class="footer-bottom">
       <p class="footer-copyright">
-        © {currentYear} Chemmeenz Restaurant. All rights reserved.
+        © {currentYear} Chemmeenz by Menma. All rights reserved.
       </p>
       <div class="footer-platforms">
         <a href="https://www.zomato.com/palakkad/chemmeenz" target="_blank" rel="noopener noreferrer" class="platform-badge" id="footer-zomato" style="padding-left: 0.5rem;">
@@ -144,12 +144,13 @@ const currentYear = new Date().getFullYear();
     color: var(--color-gold);
   }
 
-  .footer-tagline {
+  .footer-by {
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+    font-weight: 600;
     color: var(--color-text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.2em;
   }
 
   .footer-desc {
